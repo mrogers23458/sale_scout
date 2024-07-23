@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 
-export default function Home() {
+const LoginForm = () => {
   return (
     <main className={styles.main}>
       <div className={styles.logo}>Logo Here</div>
@@ -17,4 +17,8 @@ export default function Home() {
       </div>
     </main>
   );
+};
+
+export default function Home() {
+  return <LoginForm />;
 }
