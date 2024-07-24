@@ -1,3 +1,19 @@
+/* Base Themes */
+:root {
+  --lightShade: #f4f3f3;
+  --lightAccent: #7ba29d;
+  --mainBrand: #2C4B1B;
+  --darkAccent: #847149;
+  --darkSahde: #28292F;
+  --defaultBtn: #999;
+  --btnText: #fff;
+  --primaryBtn: #3b562f;
+  --infoBtn: #28292f;
+  --successBtn: #479446;
+  --warningBtn: #c4840e;
+  --dangerBtn: #f44336;
+}
+
 body {
-  background: #454B1B;
+  background: var(--mainBrand);
 }
