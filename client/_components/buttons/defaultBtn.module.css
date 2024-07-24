@@ -1,0 +1,20 @@
+.defaultBtn {
+  background: var(--defaultBtn);
+  color: var(--btnText);
+}
+
+/* Styles for desktop and laptop screens */
+@media (min-width: 1024px) {
+  /* Your styles for large screens go here */
+}
+
+
+/* Styles for tablets (iPad) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Your styles for tablets go here */
+}
+
+/* Styles for mobile devices (iPhone) */
+@media (max-width: 767px) {
+  /* Your styles for mobile devices go here */
+}
