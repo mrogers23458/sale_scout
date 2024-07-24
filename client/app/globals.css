@@ -1,16 +1,18 @@
 /* Base Themes */
 :root {
-  --lightShade: #f4f3f3;
-  --lightAccent: #7ba29d;
-  --mainBrand: #2C4B1B;
-  --darkAccent: #847149;
-  --darkSahde: #28292F;
+  --logoPrimary: #6c6f5e;
+  --logoBackground: #202020;
+  --lightShade: #DBD8C8;
+  --lightAccent: #6C6F5E;
+  --mainBrand: #202020;
+  --darkAccent: #5F6463;
+  --darkShade: #1B231F;
   --defaultBtn: #999;
   --btnText: #fff;
-  --primaryBtn: #3b562f;
-  --infoBtn: #28292f;
-  --successBtn: #479446;
-  --warningBtn: #c4840e;
+  --primaryBtn: #96b6b5;
+  --infoBtn: #524843;
+  --successBtn: #62b16e;
+  --warningBtn: #e0a136;
   --dangerBtn: #f44336;
 }
 
