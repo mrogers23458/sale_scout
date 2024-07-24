@@ -1,14 +1,48 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6rem;
+/* Styles for desktop and laptop screens */
+@media (min-width: 1024px) {
+
+  /* Your styles for large screens go here */
+  .main {
+    padding: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .hero {
+    border: 2px solid white;
+  }
 }
 
-.loginForm {
-  border: 2px solid white;
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
+
+/* Styles for tablets (iPad) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* Your styles for tablets go here */
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero {
+    border: 2px solid white;
+    height: 10vh;
+  }
+}
+
+/* Styles for mobile devices (iPhone) */
+@media (max-width: 767px) {
+
+  /* Your styles for mobile devices go here */
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero {
+    border: 2px solid white;
+    height: 10vh;
+  }
 }

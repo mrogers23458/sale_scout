@@ -1,21 +1,16 @@
-/* Base Themes */
-:root {
-  --lightShade: #f4f3f3;
-  --lightAccent: #7ba29d;
-  --mainBrand: #2C4B1B;
-  --darkAccent: #847149;
-  --darkSahde: #28292F;
-  --defaultBtn: #999;
-  --btnText: #fff;
-  --primaryBtn: #3b562f;
-  --infoBtn: #28292f;
-  --successBtn: #479446;
-  --warningBtn: #c4840e;
-  --dangerBtn: #f44336;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
 }
 
-body {
-  background: var(--mainBrand);
+.loginForm {
+  border: 2px solid white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
 }
 
 /* Styles for desktop and laptop screens */
