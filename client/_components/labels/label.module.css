@@ -1,0 +1,6 @@
+.label {
+    margin-left: var(--xs);
+    color: var(--darkShade);
+    font-size: var(--lg);
+    font-weight: var(--bold)
+}

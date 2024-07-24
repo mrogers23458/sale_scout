@@ -1,16 +1,26 @@
+/* Base styles applied at all levels go*/
+
 /* Styles for desktop and laptop screens */
 @media (min-width: 1024px) {
 
-  /* Your styles for large screens go here */
+  /* Styles for large screens go here */
   .main {
     padding: 6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     gap: 2rem;
   }
 
   .hero {
-    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image {
+    width: 40vw;
+    height: 60vh;
   }
 }
 
@@ -38,11 +48,20 @@
   .main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .hero {
-    border: 2px solid white;
-    height: 10vh;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .image {
+    width: 60vw;
+    max-height: 20vh;
+  }
+
+
 }

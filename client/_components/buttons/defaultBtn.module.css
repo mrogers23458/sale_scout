@@ -1,15 +1,16 @@
 .defaultBtn {
-  background: var(--defaultBtn);
+  margin: 0.5rem;
+  background: var(--lightAccent);
   color: var(--btnText);
-  width: 300px;
+  width: 20vw;
   border-radius: 30px;
   border: none;
 }
 
 .defaultBtn:hover {
   border: none;
-  background-color: var(--darkShade);
-  color: var(--btnText);
+  background-color: var(--lightShade);
+  color: var(--darkAccent);
 }
 
 /* Styles for desktop and laptop screens */

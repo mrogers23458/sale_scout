@@ -4,18 +4,20 @@
 import DefaultBtn from "@/_components/buttons/DefaultButton";
 import styles from "./form.module.css";
 import useLoginForm from "./useLoginFormPresenter";
+import Link from "next/link";
+import FormLabel from "@/_components/labels/FormLabel";
 
 export default function LoginForm() {
   const { handleInputChange, handleLogin, loginForm } = useLoginForm();
   return (
     <form className={styles.loginForm}>
-      <label className={styles.label}>Username</label>
+      <FormLabel labelText="Username" />
       <input
         name="username"
         onChange={(e) => handleInputChange(e)}
         className={styles.input}
       />
-      <label className={styles.label}>Password</label>
+      <FormLabel labelText="Password" />
       <input
         onChange={(e) => handleInputChange(e)}
         type="password"
@@ -28,6 +30,9 @@ export default function LoginForm() {
         loading={loginForm.loading}
         loadingText="Logging in..."
       />
+      <Link className={styles.link} href="/signup">
+        Sign Up
+      </Link>
     </form>
   );
 }

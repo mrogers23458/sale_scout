@@ -1,5 +1,6 @@
 /* Base Themes */
 :root {
+  /* Theme Colors*/
   --logoPrimary: #6c6f5e;
   --logoBackground: #202020;
   --lightShade: #DBD8C8;
@@ -14,10 +15,22 @@
   --successBtn: #62b16e;
   --warningBtn: #e0a136;
   --dangerBtn: #f44336;
+
+  /* Font Sizes */
+  --xs: 0.75rem;
+  --sm: 0.875rem;
+  --md: 1rem;
+  --lg: 1.125rem;
+  --xl: 1.25rem;
+
+  /* Font Weights */
+  --light: 200;
+  --regular: 400;
+  --bold: 600;
 }
 
 body {
-  background: var(--mainBrand);
+  background: var(--darkShade);
 }
 
 /* Styles for desktop and laptop screens */
