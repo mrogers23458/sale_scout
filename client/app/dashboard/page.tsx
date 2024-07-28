@@ -1,3 +1,5 @@
+import DashboardView from "./view/DashboardView";
+
 export default function DashBoard() {
-  return <div>Dashboard</div>;
+  return <DashboardView />;
 }
