@@ -6,6 +6,7 @@ import styles from "./form.module.css";
 import useSignupFormPresenter from "./useSignupFormPresenter";
 import Link from "next/link";
 import FormLabel from "@/_components/labels/FormLabel";
+import { FormEvent, FormEventHandler } from "react";
 
 export default function SignupForm() {
   const { handleInputChange, signupForm, handleSignup } =
@@ -40,7 +41,7 @@ export default function SignupForm() {
         className={styles.input}
       />
       <DefaultBtn
-        onClick={handleSignup}
+        onClick={(e) => handleSignup(e)}
         innerText="Sign up"
         loading={signupForm.loading}
         loadingText="Logging in..."

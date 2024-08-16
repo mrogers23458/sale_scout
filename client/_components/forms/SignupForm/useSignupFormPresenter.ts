@@ -29,9 +29,10 @@ const useSignupFormPresenter = () => {
     }));
   };
 
-  const handleSignup = () => {
+  const handleSignup = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const { email, username, password, repeat } = signupForm;
-    console.log("signed up", { username, password });
+    console.log("signed up", { username, password, email, repeat });
   };
 
   return { signupForm, handleInputChange, handleSignup };

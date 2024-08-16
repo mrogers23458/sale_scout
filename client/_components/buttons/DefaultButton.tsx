@@ -5,7 +5,7 @@ interface DefaultBtnProps {
    * Callback function that is passed from the parent, that will execute when the button is clicked
    * @function
    */
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   /**
    * Text to be displayed as button text
    * @type {string}
@@ -30,7 +30,11 @@ export default function DefaultBtn({
   loadingText,
 }: DefaultBtnProps) {
   return (
-    <button onClick={onClick} className={styles.defaultBtn} disabled={loading}>
+    <button
+      onClick={() => onClick()}
+      className={styles.defaultBtn}
+      disabled={loading}
+    >
       {loading && <p className={styles.loadingText}>{loadingText}</p>}
       {!loading && <p className={styles.innerText}>{innerText}</p>}
     </button>
