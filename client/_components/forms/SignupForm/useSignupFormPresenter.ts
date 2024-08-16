@@ -1,3 +1,5 @@
+import { CREATE_USER } from "@/graphql/mutations/mutations";
+import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 
 interface SignupFormState {
@@ -8,6 +10,10 @@ interface SignupFormState {
   loading: boolean;
 }
 
+interface ErrorState {
+  errorMessage: String | null;
+}
+
 const defaultState: SignupFormState = {
   email: "",
   username: "",
@@ -16,9 +22,15 @@ const defaultState: SignupFormState = {
   loading: false,
 };
 
+const defaultErrorState: ErrorState = {
+  errorMessage: null,
+};
+
 const useSignupFormPresenter = () => {
   /* state controls for login form */
   const [signupForm, setSignupForm] = useState<SignupFormState>(defaultState);
+  const [errors, setErrors] = useState<ErrorState>(defaultErrorState);
+  const [createUser, { data, loading, error }] = useMutation(CREATE_USER);
 
   /* handlers */
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -29,13 +41,38 @@ const useSignupFormPresenter = () => {
     }));
   };
 
-  const handleSignup = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSignup = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+
     const { email, username, password, repeat } = signupForm;
-    console.log("signed up", { username, password, email, repeat });
+    if (password !== repeat) {
+      setErrors({ errorMessage: "Passwords do not match." });
+    }
+
+    if (!email || !username || !password || !repeat) {
+      setErrors({ errorMessage: "All fields are required." });
+    }
+
+    if (email && username && password && repeat && password === repeat) {
+      await createUser({
+        variables: {
+          username,
+          email,
+          password,
+        },
+      });
+    }
   };
 
-  return { signupForm, handleInputChange, handleSignup };
+  return {
+    signupForm,
+    handleInputChange,
+    handleSignup,
+    error,
+    loading,
+    data,
+    errors,
+  };
 };
 
 export default useSignupFormPresenter;

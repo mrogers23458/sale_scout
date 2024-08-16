@@ -9,8 +9,12 @@ import FormLabel from "@/_components/labels/FormLabel";
 import { FormEvent, FormEventHandler } from "react";
 
 export default function SignupForm() {
-  const { handleInputChange, signupForm, handleSignup } =
+  const { handleInputChange, signupForm, handleSignup, error } =
     useSignupFormPresenter();
+
+  if (error) {
+    console.log(error.message);
+  }
 
   return (
     <form className={styles.loginForm}>

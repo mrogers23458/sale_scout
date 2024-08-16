@@ -3,7 +3,6 @@ import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import db from "./connection/connection.js";
-import mongoose from "mongoose";
 import express from "express";
 import http from "http";
 import cors from "cors";
@@ -38,10 +37,11 @@ db.once("open", () => {
 });
 
 await server.start();
+app.use(cors());
+app.use(express.json());
+
 app.use(
   "/graphql",
-  cors(),
-  express.json(),
   expressMiddleware(server, {
     context: async ({ req }) => ({ token: req.headers.token }),
   })
