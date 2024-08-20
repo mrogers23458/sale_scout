@@ -102,7 +102,6 @@ const mock: MockData = {
 const useDashboardModel = async () => {
   const data = mock;
   const { results } = await data;
-  console.log(results);
   return { results };
 };
 

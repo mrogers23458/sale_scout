@@ -1,10 +1,11 @@
 import { useState } from "react";
 import useDashboardModel from "../model/useDashboardModel";
-const useDashboardPresenter = () => {
+const useDashboardPresenter = async () => {
   const [loading, setLoading] = useState(false);
-  const data = useDashboardModel();
+  const data = await useDashboardModel();
+  const results = data?.results;
 
-  return { data, loading, setLoading };
+  return { results, loading, setLoading };
 };
 
 export default useDashboardPresenter;

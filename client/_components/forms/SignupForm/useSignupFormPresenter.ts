@@ -1,6 +1,7 @@
 import { CREATE_USER } from "@/graphql/mutations/mutations";
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface SignupFormState {
   email: String;
@@ -27,6 +28,7 @@ const defaultErrorState: ErrorState = {
 };
 
 const useSignupFormPresenter = () => {
+  const router = useRouter();
   /* state controls for login form */
   const [signupForm, setSignupForm] = useState<SignupFormState>(defaultState);
   const [errors, setErrors] = useState<ErrorState>(defaultErrorState);
@@ -63,6 +65,10 @@ const useSignupFormPresenter = () => {
       });
     }
   };
+
+  if (data) {
+    router.push("/dashboard");
+  }
 
   return {
     signupForm,

@@ -6,15 +6,10 @@ import styles from "./form.module.css";
 import useSignupFormPresenter from "./useSignupFormPresenter";
 import Link from "next/link";
 import FormLabel from "@/_components/labels/FormLabel";
-import { FormEvent, FormEventHandler } from "react";
 
 export default function SignupForm() {
-  const { handleInputChange, signupForm, handleSignup, error } =
+  const { handleInputChange, signupForm, handleSignup } =
     useSignupFormPresenter();
-
-  if (error) {
-    console.log(error.message);
-  }
 
   return (
     <form className={styles.loginForm}>
